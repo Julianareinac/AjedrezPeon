@@ -22,7 +22,6 @@ public class Peon extends Pieza implements IMover {
         ArrayList<Coordinate> coordinates = new ArrayList<>();
         Coordinate coordinate = pieza.getCasilla().getCoordinate();
         boolean isFirstMove = true;
-        //Coordinate auxiliar = pieza.getCasilla().getCoordinate();
 
             if (pieza.getColor().equals(Color.NEGRAS) && coordinate != null) {
 
@@ -42,7 +41,7 @@ public class Peon extends Pieza implements IMover {
                     coordinates.add(coord3);
                 }
 
-                if(coordinate.getCol() <= 7 && coordinate.getCol() > 0){
+                if(coordinate.getCol() > 0){
                     Coordinate coord4 = new Coordinate(coordinate.getRow() + 1, coordinate.getCol() - 1);
                     coordinates.add(coord4);
                 }
@@ -50,7 +49,7 @@ public class Peon extends Pieza implements IMover {
 
             else if (pieza.getColor().equals(Color.BLANCAS) && coordinate.getRow() > 0) {
 
-                if ( coordinate.getRow() <= 7 && coordinate.getCol() <= 7) {
+                if ( coordinate.getRow() <= 7) {
                     Coordinate coord1 = new Coordinate(coordinate.getRow() - 1, coordinate.getCol());
                     coordinates.add(coord1);
                 }
@@ -61,7 +60,7 @@ public class Peon extends Pieza implements IMover {
                     coordinates.add(coord2);
                 }
 
-                if(coordinate.getCol() <= 7 && coordinate.getCol() > 0){
+                if(coordinate.getCol() > 0){
                     Coordinate coord3 = new Coordinate(coordinate.getRow() - 1, coordinate.getCol() - 1);
                     coordinates.add(coord3);
                 }
